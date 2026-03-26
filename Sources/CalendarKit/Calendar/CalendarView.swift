@@ -15,7 +15,6 @@ public struct CalendarView<DayContent: View>: View {
     let onSelectedDate: (Date) -> Void
     let dayContent: (Date, CalendarDayContentContext) -> DayContent
 
-//    @EnvironmentObject private var layout: CalendarLayoutEnvironment
     @StateObject private var layout = CalendarLayoutEnvironment()
     @State private var monthSize: CGSize = .zero
 
@@ -61,14 +60,10 @@ public struct CalendarView<DayContent: View>: View {
                 proxy.size
             } action: { newValue in
                 self.monthSize = newValue
+                layout.updateLayout(for: newValue)
             }
         }
         .animation(.easeInOut, value: selectedMonth)
-        .onGeometryChange(for: CGSize.self) { proxy in
-            proxy.size
-        } action: { newSize in
-            layout.updateLayout(for: newSize)
-        }
     }
 
 }
@@ -145,7 +140,6 @@ private extension CalendarView {
             case .value(let date):
                 Color.clear
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-   
                     .overlay(alignment: .topLeading) {
                         dayContent(date, dayContentContext())
                     }
@@ -156,6 +150,7 @@ private extension CalendarView {
         }
         .frame(maxWidth: .infinity, minHeight: layout.metrics.dayCellMinHeight, maxHeight: .infinity)
         .border(style.borderColor, width: 1)
+        .contentShape(.rect)
         .onTapGesture {
             switch item {
             case .placeholder:
