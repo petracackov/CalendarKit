@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum WeekDay: Int, CaseIterable, Identifiable {
+public enum WeekDay: Int, CaseIterable, Identifiable {
 
-    var id: Self { self }
+    public var id: Self { self }
 
     case mon = 2
     case tue = 3
@@ -44,9 +44,9 @@ enum WeekDay: Int, CaseIterable, Identifiable {
     }
 }
 
-enum MonthName: Int, CaseIterable, Identifiable, Hashable {
+public enum MonthName: Int, CaseIterable, Identifiable, Hashable {
 
-    var id: Self { self }
+    public var id: Self { self }
 
     case january = 1
     case february = 2
@@ -79,24 +79,24 @@ enum MonthName: Int, CaseIterable, Identifiable, Hashable {
     }
 }
 
-enum DayUi: Hashable {
+public enum DayUi: Hashable {
     case value(Date), placeholder
 
-    var day: Int? {
+    public var day: Int? {
         switch self {
         case .value(let date): date.app.dayComponents.day
         case .placeholder: nil
         }
     }
 
-    var isToday: Bool {
+    public var isToday: Bool {
         switch self {
         case .placeholder: false
         case .value(let date): date.app.dayIsEqualTo(Date())
         }
     }
 
-    var dayString: String {
+    public var dayString: String {
         guard let day else { return "" }
         return String(day)
     }
@@ -105,16 +105,16 @@ enum DayUi: Hashable {
 public struct MonthUi: Hashable, Identifiable {
     public let id: Int
     private let dates: [Date]
-    let weeks: [[DayUi]]
+    public let weeks: [[DayUi]]
 
-    var monthComponents: DateComponents {
+    public var monthComponents: DateComponents {
         dates.first?.app.monthComponents ?? Date().app.monthComponents
     }
-    var isCurrentMonth: Bool {
+    public var isCurrentMonth: Bool {
         monthComponents.date.app.isInCurrentMonth
     }
 
-    var name: MonthName {
+    public var name: MonthName {
         let month = dates.first?.app.dayComponents.month ?? 0
         return .init(rawValue: month) ?? .january
     }
