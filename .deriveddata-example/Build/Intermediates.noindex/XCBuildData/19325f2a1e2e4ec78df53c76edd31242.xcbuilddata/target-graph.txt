@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+Target 'CalendarTest' in project 'CalendarTest'
+➜ Explicit dependency on target 'CalendarKit' in project 'CalendarKit'
+Target 'CalendarKit' in project 'CalendarKit'
+➜ Explicit dependency on target 'CalendarKit' in project 'CalendarKit'
+Target 'CalendarKit' in project 'CalendarKit' (no dependencies)

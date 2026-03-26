@@ -1,0 +1,27 @@
+{
+  "object" : {
+    "artifacts" : [
+
+    ],
+    "dependencies" : [
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "calendarkit",
+          "kind" : "fileSystem",
+          "location" : "/Users/petracackov/Github/CalendarKit",
+          "name" : "CalendarKit"
+        },
+        "state" : {
+          "name" : "fileSystem",
+          "path" : "/Users/petracackov/Github/CalendarKit"
+        },
+        "subpath" : "calendarkit"
+      }
+    ],
+    "prebuilts" : [
+
+    ]
+  },
+  "version" : 7
+}

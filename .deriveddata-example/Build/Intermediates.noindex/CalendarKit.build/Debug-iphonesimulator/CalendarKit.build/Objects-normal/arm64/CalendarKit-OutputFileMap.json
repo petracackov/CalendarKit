@@ -1,0 +1,99 @@
+{
+  "" : {
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarKit-primary.dia",
+    "emit-module-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarKit-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarKit-primary-emit-module.dia",
+    "pch" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarKit-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarKit-primary.swiftdeps"
+  },
+  "/Users/petracackov/Github/CalendarKit/Sources/CalendarKit/Calendar/CalendarComponents.swift" : {
+    "const-values" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarComponents.swiftconstvalues",
+    "dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarComponents.d",
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarComponents.dia",
+    "index-unit-output-path" : "/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarComponents.o",
+    "llvm-bc" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarComponents.bc",
+    "object" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarComponents.o",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarComponents.swiftdeps",
+    "swiftmodule" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarComponents~partial.swiftmodule"
+  },
+  "/Users/petracackov/Github/CalendarKit/Sources/CalendarKit/Calendar/CalendarDayContentContext.swift" : {
+    "const-values" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarDayContentContext.swiftconstvalues",
+    "dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarDayContentContext.d",
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarDayContentContext.dia",
+    "index-unit-output-path" : "/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarDayContentContext.o",
+    "llvm-bc" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarDayContentContext.bc",
+    "object" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarDayContentContext.o",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarDayContentContext.swiftdeps",
+    "swiftmodule" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarDayContentContext~partial.swiftmodule"
+  },
+  "/Users/petracackov/Github/CalendarKit/Sources/CalendarKit/Calendar/CalendarLayoutEnvironment.swift" : {
+    "const-values" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutEnvironment.swiftconstvalues",
+    "dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutEnvironment.d",
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutEnvironment.dia",
+    "index-unit-output-path" : "/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutEnvironment.o",
+    "llvm-bc" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutEnvironment.bc",
+    "object" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutEnvironment.o",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutEnvironment.swiftdeps",
+    "swiftmodule" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutEnvironment~partial.swiftmodule"
+  },
+  "/Users/petracackov/Github/CalendarKit/Sources/CalendarKit/Calendar/CalendarLayoutMetrics.swift" : {
+    "const-values" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutMetrics.swiftconstvalues",
+    "dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutMetrics.d",
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutMetrics.dia",
+    "index-unit-output-path" : "/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutMetrics.o",
+    "llvm-bc" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutMetrics.bc",
+    "object" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutMetrics.o",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutMetrics.swiftdeps",
+    "swiftmodule" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarLayoutMetrics~partial.swiftmodule"
+  },
+  "/Users/petracackov/Github/CalendarKit/Sources/CalendarKit/Calendar/CalendarStyle.swift" : {
+    "const-values" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarStyle.swiftconstvalues",
+    "dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarStyle.d",
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarStyle.dia",
+    "index-unit-output-path" : "/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarStyle.o",
+    "llvm-bc" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarStyle.bc",
+    "object" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarStyle.o",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarStyle.swiftdeps",
+    "swiftmodule" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarStyle~partial.swiftmodule"
+  },
+  "/Users/petracackov/Github/CalendarKit/Sources/CalendarKit/Calendar/CalendarView.swift" : {
+    "const-values" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarView.swiftconstvalues",
+    "dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarView.d",
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarView.dia",
+    "index-unit-output-path" : "/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarView.o",
+    "llvm-bc" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarView.bc",
+    "object" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarView.o",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarView.swiftdeps",
+    "swiftmodule" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarView~partial.swiftmodule"
+  },
+  "/Users/petracackov/Github/CalendarKit/Sources/CalendarKit/CalendarKit.swift" : {
+    "const-values" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarKit.swiftconstvalues",
+    "dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarKit.d",
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarKit.dia",
+    "index-unit-output-path" : "/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarKit.o",
+    "llvm-bc" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarKit.bc",
+    "object" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarKit.o",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarKit.swiftdeps",
+    "swiftmodule" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/CalendarKit~partial.swiftmodule"
+  },
+  "/Users/petracackov/Github/CalendarKit/Sources/CalendarKit/DateStuff/Date+Calendar.swift" : {
+    "const-values" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/Date+Calendar.swiftconstvalues",
+    "dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/Date+Calendar.d",
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/Date+Calendar.dia",
+    "index-unit-output-path" : "/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/Date+Calendar.o",
+    "llvm-bc" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/Date+Calendar.bc",
+    "object" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/Date+Calendar.o",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/Date+Calendar.swiftdeps",
+    "swiftmodule" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/Date+Calendar~partial.swiftmodule"
+  },
+  "/Users/petracackov/Github/CalendarKit/Sources/CalendarKit/DateStuff/DateComponents+Date.swift" : {
+    "const-values" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/DateComponents+Date.swiftconstvalues",
+    "dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/DateComponents+Date.d",
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/DateComponents+Date.dia",
+    "index-unit-output-path" : "/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/DateComponents+Date.o",
+    "llvm-bc" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/DateComponents+Date.bc",
+    "object" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/DateComponents+Date.o",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/DateComponents+Date.swiftdeps",
+    "swiftmodule" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarKit.build/Debug-iphonesimulator/CalendarKit.build/Objects-normal/arm64/DateComponents+Date~partial.swiftmodule"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "source": "/Users/petracackov/Github/CalendarKit/Example/CalendarTest/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "+%lld more",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 55
+        }
+      }
+    ]
+  },
+  "version": 1
+}

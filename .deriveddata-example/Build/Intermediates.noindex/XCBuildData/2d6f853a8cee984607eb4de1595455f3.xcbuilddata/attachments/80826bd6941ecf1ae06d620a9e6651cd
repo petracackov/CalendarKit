@@ -1,0 +1,39 @@
+{
+  "" : {
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/CalendarTest-primary.dia",
+    "emit-module-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/CalendarTest-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/CalendarTest-primary-emit-module.dia",
+    "pch" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/CalendarTest-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/CalendarTest-primary.swiftdeps"
+  },
+  "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/petracackov/Github/CalendarKit/Example/CalendarTest/CalendarTestApp.swift" : {
+    "const-values" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/CalendarTestApp.swiftconstvalues",
+    "dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/CalendarTestApp.d",
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/CalendarTestApp.dia",
+    "index-unit-output-path" : "/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/CalendarTestApp.o",
+    "llvm-bc" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/CalendarTestApp.bc",
+    "object" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/CalendarTestApp.o",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/CalendarTestApp.swiftdeps",
+    "swiftmodule" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/CalendarTestApp~partial.swiftmodule"
+  },
+  "/Users/petracackov/Github/CalendarKit/Example/CalendarTest/ContentView.swift" : {
+    "const-values" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/petracackov/Github/CalendarKit/.deriveddata-example/Build/Intermediates.noindex/CalendarTest.build/Debug-iphonesimulator/CalendarTest.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  }
+}
