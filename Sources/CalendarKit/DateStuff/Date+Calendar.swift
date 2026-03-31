@@ -68,7 +68,7 @@ extension Date {
         }
 
         var monthComponents: DateComponents {
-            return calendar.dateComponents([.month, .isLeapMonth, .quarter, .year], from: date)
+            return calendar.dateComponents([.month, .isLeapMonth, .year], from: date)
         }
 
         var weekComponents: DateComponents {
