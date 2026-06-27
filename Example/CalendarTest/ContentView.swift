@@ -88,7 +88,7 @@ struct ContentView: View {
     }
 
     @ViewBuilder
-    private func dayView(eventId: UUID, day: DayEvents) -> some View {
+    private func dayView(eventId: String, day: DayEvents) -> some View {
         if let day = day.events.first(where: { $0.id == eventId }) {
             VStack {
                 Text(day.title)
