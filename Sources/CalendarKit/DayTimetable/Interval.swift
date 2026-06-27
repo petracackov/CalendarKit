@@ -8,18 +8,18 @@
 import Foundation
 
 public struct Interval: Identifiable {
-    public let id: UUID
+    public let id: String
     public let start: Date
     public let end: Date
 
-    public init(id: UUID = UUID(), start: Date, end: Date) {
+    var duration: Int {
+        start.app.seconds(until: end)
+    }
+
+    public init(id: String = UUID().uuidString, start: Date, end: Date) {
         self.id = id
         self.start = start
         self.end = end
     }
 
-    var duration: Int {
-        print("ww", start.app.seconds(until: end))
-        return start.app.seconds(until: end)
-    }
 }

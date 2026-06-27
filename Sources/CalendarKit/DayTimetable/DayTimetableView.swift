@@ -122,7 +122,7 @@ extension DayTimetableView {
     }
 
     private func startToPixels(_ interval: Interval) -> CGFloat {
-        let start = interval.start.timeIntervalSince(Date().app.startOfDay)
+        let start = interval.start.timeIntervalSince(interval.start.app.startOfDay)
         let ratio = start/(60 * 60 * 24)
         let startInPixels = ratio*contentSize.height
         return startInPixels
@@ -130,7 +130,7 @@ extension DayTimetableView {
 
     static func combineIntervals(_ intervals: [Interval]) -> [[Interval]] {
         var combined: [[Interval]] = []
-        var sorted = intervals.sorted(by: { $0.start < $1.start })
+        let sorted = intervals.sorted(by: { $0.start < $1.start })
 
         var subinterval: [Interval] = []
         for interval in sorted {
@@ -154,12 +154,12 @@ extension DayTimetableView {
 
 #Preview {
     DayTimetableView(intervals: [
-        .init(id: UUID(), start: Date().app.startOfDay, end: Date().app.startOfDay.app.addingHours(2)),
-        .init(id: UUID(), start: Date().app.startOfDay.app.addingHours(1), end: Date().app.startOfDay.app.addingHours(3)),
-        .init(id: UUID(), start: Date().app.startOfDay.app.addingHours(4), end: Date().app.startOfDay.app.addingHours(5))
+        .init(id: UUID().uuidString, start: Date().app.startOfDay, end: Date().app.startOfDay.app.addingHours(2)),
+        .init(id: UUID().uuidString, start: Date().app.startOfDay.app.addingHours(1), end: Date().app.startOfDay.app.addingHours(3)),
+        .init(id: UUID().uuidString, start: Date().app.startOfDay.app.addingHours(4), end: Date().app.startOfDay.app.addingHours(5))
     ]) { interval in
         VStack {
-            Text(interval.id.uuidString)
+            Text(interval.id)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
