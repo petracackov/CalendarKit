@@ -11,37 +11,60 @@ import CalendarKit
 struct ContentView: View {
 
     @State private var selectedMonth: MonthUi = MonthUi.currentMonth()
-    private let mockEvents: [String] = [
-        "08:30 Standup",
-        "10:00 Product sync",
-        "12:00 Lunch with team",
-        "14:30 Design review",
-        "16:00 Focus block"
-    ]
+    @State private var selectedDay: DayEvents?
+    let days = DayEvents.mockedDays()
 
     var body: some View {
         CalendarView(
             selectedMonth: $selectedMonth,
             onSelectedDate: { date in
-                print(date)
+                selectedDay = day(for: date)
             },
-            dayContent: { _, context in
-                eventsView(context)
+            dayContent: { date, context in
+                Group {
+                    if let day = day(for: date) {
+                        eventsView(context, day: day)
+                    } else {
+                        EmptyView()
+                    }
+                }
             }
         )
+        .fullScreenCover(item: $selectedDay) { day in
+            NavigationStack {
+                DayTimetableView(
+                    style: .init(
+                        tintColor: .clear,
+                        fontColor: .gray,
+                        timeIndicatorColor: Color.purple.opacity(0.3)
+                    ),
+                    intervals: toIntervals(day),
+                    intervalContent: { interval in
+                        dayView(eventId: interval.id, day: day)
+                    })
+                .navigationTitle("Timetable")
+                .toolbar {
+                    ToolbarItem {
+                        Button("", systemImage: "xmark") {
+                            selectedDay = nil
+                        }
+                    }
+                }
+            }
+        }
 
     }
 
-    private func eventsView(_ context: CalendarDayContentContext) -> some View {
+    private func eventsView(_ context: CalendarDayContentContext, day: DayEvents) -> some View {
         let maxRows = context.maxItems(itemHeight: 20, verticalSpacing: 2)
-        let reservedRowsForMore = mockEvents.count > maxRows ? 1 : 0
+        let reservedRowsForMore = day.events.count > maxRows ? 1 : 0
         let eventRows = max(0, maxRows - reservedRowsForMore)
-        let visibleEvents = Array(mockEvents.prefix(eventRows))
-        let hiddenCount = max(0, mockEvents.count - visibleEvents.count)
+        let visibleEvents = Array(day.events.prefix(eventRows))
+        let hiddenCount = max(0, day.events.count - visibleEvents.count)
 
         return VStack(alignment: .leading, spacing: 2) {
-            ForEach(visibleEvents, id: \.self) { event in
-                Text(event)
+            ForEach(visibleEvents, id: \.self.id) { event in
+                Text(event.title)
                     .frame(height: 20)
                     .lineLimit(1)
                     .font(.caption2)
@@ -62,6 +85,28 @@ struct ContentView: View {
 
             Spacer()
         }
+    }
+
+    @ViewBuilder
+    private func dayView(eventId: UUID, day: DayEvents) -> some View {
+        if let day = day.events.first(where: { $0.id == eventId }) {
+            VStack {
+                Text(day.title)
+                    .font(.title)
+                Spacer()
+            }
+            .frame(maxWidth: .infinity)
+            .background(.purple.opacity(0.3))
+            .clipShape(.rect(cornerRadius: 20))
+        }
+    }
+
+    private func day(for date: Date) -> DayEvents? {
+        return days.first(where: { $0.date.app.dayIsEqualTo(date) })
+    }
+
+    private func toIntervals(_ day: DayEvents) -> [Interval] {
+        day.events.map { Interval(id: $0.id, start: $0.start, end: $0.endDate) }
     }
 }
 

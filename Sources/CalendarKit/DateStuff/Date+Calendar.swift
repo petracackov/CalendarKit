@@ -119,6 +119,10 @@ extension Date {
             calendar.dateComponents([.day], from: self.date, to: date).day ?? 0
         }
 
+        func seconds(until date: Date) -> Int {
+            Int(date.timeIntervalSince(self.date))
+        }
+
         var datesInMonth: [Date] {
             guard let firstDayOfTheMonth = firstDayOfTheMonth else { return [] }
             guard let numberOfDaysInMonth = calendar.range(of: .day, in: .month, for: firstDayOfTheMonth)?.count else { return [] }

@@ -2,7 +2,7 @@
 //  CalendarLayoutEnvironment.swift
 //  CalendarTest
 //
-//  Created by Cursor on 25. 3. 26.
+//  Created by Petra Cackov on 25. 3. 26.
 //
 
 import SwiftUI

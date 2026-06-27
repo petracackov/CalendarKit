@@ -1,6 +1,6 @@
 # CalendarKit
 
-CalendarKit is a SwiftUI monthly calendar component you can embed in your app and fill with custom day content (events, badges, summaries, and more).
+CalendarKit is a SwiftUI calendar package with a customizable monthly calendar and a scrollable day timetable for event-style content.
 
 ## Preview
 
@@ -11,6 +11,10 @@ CalendarKit is a SwiftUI monthly calendar component you can embed in your app an
 ### iPad
 
 <img src="Docs/Images/example-ipad-landscape.png" alt="CalendarKit iPad Landscape" width="340" />
+
+### Timetable
+
+<img src="Docs/Images/example-timetable.png" alt="CalendarKit Day Timetable" width="260" />
 
 ### Video
 
@@ -85,9 +89,41 @@ struct DayCellContent: View {
 }
 ```
 
+## Day Timetable
+
+`DayTimetableView` renders a scrollable 24-hour timetable from an array of `Interval` values. You provide the interval dates and decide how each interval should look.
+
+```swift
+import SwiftUI
+import CalendarKit
+
+struct TimetableScreen: View {
+    // Intervals are your timetable items with start and end dates.
+    let intervals: [Interval]
+
+    var body: some View {
+        DayTimetableView(
+            style: TimetableStyle(
+                tintColor: .blue.opacity(0.2),
+                fontColor: .secondary,
+                timeIndicatorColor: .gray.opacity(0.3)
+            ),
+            intervals: intervals
+        ) { interval in
+            Text("Event")
+                .font(.caption)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .padding(8)
+        }
+    }
+}
+```
+
+Overlapping intervals are laid out side by side. Use `TimetableStyle` to customize the interval background tint, time label color, and hour separator color.
+
 ## UI Customization
 
-You can customize these parts of the calendar UI today:
+### Monthly Calendar
 
 - **Color scheme** via `style: CalendarStyle(...)`
   - `tintColor` (navigation icons, Today action, today highlight)
@@ -102,7 +138,19 @@ You can customize these parts of the calendar UI today:
 - **Date tap handling** via `onSelectedDate`
   - connect calendar taps to navigation, detail sheets, or selection logic
 
-Note: layout metrics and typography are currently internal; color/style and day-content rendering are the main public customization points.
+### Day Timetable
+
+- **Color scheme** via `style: TimetableStyle(...)`
+  - `tintColor` (interval background tint)
+  - `fontColor` (hour label color)
+  - `timeIndicatorColor` (hour separator line color)
+- **Interval content** via the `intervalContent` closure
+  - render your own event cards, labels, icons, or custom layout for each `Interval`
+- **Schedule data** via `intervals: [Interval]`
+  - provide start and end dates for each timetable item
+  - overlapping intervals are automatically laid out side by side
+
+Note: layout metrics and typography are currently internal; color/style, day-content rendering, and timetable interval rendering are the main public customization points.
 
 ## Example App
 
