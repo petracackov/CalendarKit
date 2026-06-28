@@ -91,7 +91,7 @@ struct DayCellContent: View {
 
 ## Day Timetable
 
-`DayTimetableView` renders a scrollable 24-hour timetable from an array of `Interval` values. You provide the interval dates and decide how each interval should look.
+`DayTimetableView` renders a scrollable 24-hour timetable from an array of `Interval` values. You provide the day, interval dates, and the SwiftUI content for each interval.
 
 ```swift
 import SwiftUI
@@ -103,10 +103,13 @@ struct TimetableScreen: View {
 
     var body: some View {
         DayTimetableView(
+            date: Date(),
             style: TimetableStyle(
-                tintColor: .blue.opacity(0.2),
+                intervalColor: .blue.opacity(0.2),
                 fontColor: .secondary,
-                timeIndicatorColor: .gray.opacity(0.3)
+                timeIndicatorColor: .gray.opacity(0.3),
+                currentTimeIndicatorColor: .blue,
+                indicatorFontColor: .white
             ),
             intervals: intervals
         ) { interval in
@@ -119,7 +122,33 @@ struct TimetableScreen: View {
 }
 ```
 
-Overlapping intervals are laid out side by side. Use `TimetableStyle` to customize the interval background tint, time label color, and hour separator color.
+Overlapping intervals are laid out side by side. When the timetable date is today, it also shows a current-time indicator that updates periodically.
+
+For short events, you can provide adaptive content. `DayTimetableView` tries the large view first, then falls back to the mid and small views using `ViewThatFits`.
+
+```swift
+DayTimetableView(
+    date: Date(),
+    intervals: intervals,
+    largeContent: { interval in
+        VStack(alignment: .leading) {
+            Text("Event")
+                .font(.headline)
+            Text(interval.start, style: .time)
+                .font(.caption)
+        }
+        .padding(8)
+    },
+    midContent: { _ in
+        Text("Event")
+            .font(.caption)
+            .lineLimit(1)
+    },
+    smallContent: { _ in
+        Color.clear
+    }
+)
+```
 
 ## UI Customization
 
@@ -141,10 +170,12 @@ Overlapping intervals are laid out side by side. Use `TimetableStyle` to customi
 ### Day Timetable
 
 - **Color scheme** via `style: TimetableStyle(...)`
-  - `tintColor` (interval background tint)
+  - `intervalColor` (interval background color)
   - `fontColor` (hour label color)
   - `timeIndicatorColor` (hour separator line color)
-- **Interval content** via the `intervalContent` closure
+  - `currentTimeIndicatorColor` (current-time line and capsule color)
+  - `indicatorFontColor` (current-time text color)
+- **Interval content** via the `intervalContent` closure or adaptive `largeContent`, `midContent`, and `smallContent` closures
   - render your own event cards, labels, icons, or custom layout for each `Interval`
 - **Schedule data** via `intervals: [Interval]`
   - provide start and end dates for each timetable item

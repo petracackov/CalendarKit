@@ -33,10 +33,13 @@ struct ContentView: View {
         .fullScreenCover(item: $selectedDay) { day in
             NavigationStack {
                 DayTimetableView(
+                    date: Date(),
                     style: .init(
-                        tintColor: .clear,
+                        intervalColor: .clear,
                         fontColor: .gray,
-                        timeIndicatorColor: Color.purple.opacity(0.3)
+                        timeIndicatorColor: Color.purple.opacity(0.3),
+                        currentTimeIndicatorColor: .purple,
+                        indicatorFontColor: .white
                     ),
                     intervals: toIntervals(day),
                     intervalContent: { interval in

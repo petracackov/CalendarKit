@@ -32,6 +32,10 @@ extension Date {
             return calendar.date(byAdding: .second, value: secondsToAdd, to: date) ?? date
         }
 
+        func addingMinutes(_ secondsToAdd: Int) -> Date {
+            return calendar.date(byAdding: .minute, value: secondsToAdd, to: date) ?? date
+        }
+
         func addingHours(_ hoursToAdd: Int) -> Date {
             return calendar.date(byAdding: .hour, value: hoursToAdd, to: date) ?? date
         }

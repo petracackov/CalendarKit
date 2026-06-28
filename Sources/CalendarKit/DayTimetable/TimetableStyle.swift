@@ -8,19 +8,29 @@
 import SwiftUI
 
 public struct TimetableStyle: Sendable {
-    public let tintColor: Color
+    public let intervalColor: Color
     public let fontColor: Color
     public let timeIndicatorColor: Color
+    public let currentTimeIndicatorColor: Color
+    public let indicatorFontColor: Color
 
-    public init(tintColor: Color, fontColor: Color, timeIndicatorColor: Color) {
-        self.tintColor = tintColor
+    public init(intervalColor: Color,
+                fontColor: Color,
+                timeIndicatorColor: Color,
+                currentTimeIndicatorColor: Color,
+                indicatorFontColor: Color) {
+        self.intervalColor = intervalColor
         self.fontColor = fontColor
         self.timeIndicatorColor = timeIndicatorColor
+        self.currentTimeIndicatorColor = currentTimeIndicatorColor
+        self.indicatorFontColor = indicatorFontColor
     }
 
     public static let `default` = TimetableStyle(
-        tintColor: .blue.opacity(0.3),
+        intervalColor: .blue.opacity(0.3),
         fontColor: .black,
-        timeIndicatorColor: .gray.opacity(0.3)
+        timeIndicatorColor: .gray.opacity(0.3),
+        currentTimeIndicatorColor: .gray,
+        indicatorFontColor: .white
     )
 }

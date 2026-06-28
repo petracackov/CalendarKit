@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct DayTimetableView<Content: View>: View {
+public struct DayTimetableView<LargeContent: View, MidContent: View, SmallContent: View>: View {
 
     let hours: [String] = {
         Array(0...23).map { hour in
@@ -19,20 +19,43 @@ public struct DayTimetableView<Content: View>: View {
     @State private var size: CGSize = .zero
     @State private var contentSize: CGSize = .zero
     @State private var hourWidth: CGFloat = .zero
+    @State private var scrolledID: String?
+    @State private var didScrollInitially = false
 
     private var intervalAvailableWidth: CGFloat {
         max(size.width - hourWidth, 0)
     }
 
+    private let date: Date
     private let style: TimetableStyle
     private let intervals: [[Interval]]
-    private let intervalContent: (Interval) -> Content
+    private let largeContent: (Interval) -> LargeContent
+    private let midContent: (Interval) -> MidContent
+    private let smallContent: (Interval) -> SmallContent
 
-    public init(style: TimetableStyle = .default,
+    public init(date: Date,
+                style: TimetableStyle = .default,
                 intervals: [Interval],
-                intervalContent: @escaping (Interval) -> Content) {
+                @ViewBuilder largeContent: @escaping (Interval) -> LargeContent,
+                @ViewBuilder midContent: @escaping (Interval) -> MidContent,
+                @ViewBuilder smallContent: @escaping (Interval) -> SmallContent) {
         self.intervals = Self.combineIntervals(intervals)
-        self.intervalContent = intervalContent
+        self.largeContent = largeContent
+        self.midContent = midContent
+        self.smallContent = smallContent
+        self.style = style
+        self.date = date
+    }
+
+    public init(date: Date,
+                style: TimetableStyle = .default,
+                intervals: [Interval],
+                @ViewBuilder intervalContent: @escaping (Interval) -> LargeContent) where MidContent == LargeContent, SmallContent == LargeContent {
+        self.intervals = Self.combineIntervals(intervals)
+        self.date = date
+        self.largeContent = intervalContent
+        self.midContent = intervalContent
+        self.smallContent = intervalContent
         self.style = style
     }
 
@@ -41,63 +64,104 @@ public struct DayTimetableView<Content: View>: View {
             ZStack(alignment: .topLeading) {
                 VStack(spacing: 0) {
                     ForEach(hours, id: \.self) { hour in
-                        hourView(for: hour)
+                        VStack(spacing: 0) {
+                            hourSeparator(for: hour)
+                            Spacer()
+                        }
+                        .frame(height: size.height/6)
+                        .id(hour)
                     }
+
+
+                    hourSeparator(for: hours.first ?? "")
+
                 }
 
                 ForEach(Array(intervals.enumerated()), id: \.offset) { subinterval in
                     subintervalView(for: subinterval.element)
                 }
 
+                if date.app.dayIsEqualTo(Date()) {
+                    currentHourIndicator()
+                }
+
             }
+            .scrollTargetLayout()
             .onGeometryChange(for: CGSize.self) { proxy in
                 proxy.size
             } action: { newValue in
                 self.contentSize = newValue
+                scrollToInitialPositionIfNeeded()
             }
         }
-        .safeAreaPadding(.top, 30)
+        .scrollPosition(id: $scrolledID, anchor: .top)
+        .safeAreaPadding(.vertical, 30)
         .onGeometryChange(for: CGSize.self) { proxy in
             proxy.size
         } action: { newValue in
             self.size = newValue
+            scrollToInitialPositionIfNeeded()
         }
 
     }
 
-    private func hourView(for hour: String) -> some View {
-        VStack(spacing: 0) {
-            Rectangle()
-                .frame(height: 1)
-                .foregroundStyle(style.timeIndicatorColor)
-                .padding(.leading, hourWidth)
-                .overlay(alignment: .leading) {
-                    Text(hour)
-                        .padding(.leading, 5)
-                        .foregroundStyle(style.fontColor)
-                        .font(.caption)
-                        .onGeometryChange(for: CGSize.self) { proxy in
-                            proxy.size
-                        } action: { newValue in
-                            self.hourWidth = max(newValue.width + 5, self.hourWidth)
-                        }
-                }
-            Spacer()
+    private func currentHourIndicator() -> some View {
+        TimelineView(.periodic(from: .now, by: 5)) { timeline in
+            HStack(spacing: 0) {
+                Text(AppDateFormatter.shared.localizedHourString(date: timeline.date))
+                    .font(.caption)
+                    .padding(3)
+                    .frame(width: hourWidth)
+                    .foregroundStyle(style.indicatorFontColor)
+                    .background(style.currentTimeIndicatorColor)
+                    .clipShape(.capsule)
+                    .padding(.leading, 5)
+
+                Rectangle()
+                    .frame(height: 2)
+                    .foregroundStyle(style.currentTimeIndicatorColor)
+            }
+            .offset(y: dateToPixels(timeline.date))
         }
-        .frame(height: size.height/6)
+    }
+
+    private func hourSeparator(for hour: String) -> some View {
+        Rectangle()
+            .frame(height: 1)
+            .foregroundStyle(style.timeIndicatorColor)
+            .padding(.leading, hourWidth)
+            .overlay(alignment: .leading) {
+                Text(hour)
+                    .padding(.leading, 15)
+                    .foregroundStyle(style.fontColor)
+                    .font(.caption)
+                    .onGeometryChange(for: CGSize.self) { proxy in
+                        proxy.size
+                    } action: { newValue in
+                        self.hourWidth = max(newValue.width + 5, self.hourWidth)
+                    }
+            }
     }
 
 
     private func subintervalView(for intervals: [Interval]) -> some View {
-        ForEach(Array(intervals.enumerated()), id: \.offset,) { offset, interval in
-            intervalContent(interval)
-                .background(style.tintColor)
-                .frame(width: intervalWidth(index: intervals.count),
-                       height: intervalToPixels(interval))
-                .clipped()
-                .offset(x: CGFloat(offset)*intervalWidth(index: intervals.count)+hourWidth,
-                        y: startToPixels(interval))
+        let indices = Array(intervals.indices)
 
+        return ForEach(indices, id: \.self) { (offset: Int) in
+            let interval = intervals[offset]
+
+            ZStack {
+                ViewThatFits(in: .vertical) {
+                    largeContent(interval)
+                    midContent(interval)
+                    smallContent(interval)
+                }
+            }
+            .background(style.intervalColor)
+            .frame(width: intervalWidth(index: intervals.count),
+                   height: intervalToPixels(interval))
+            .offset(x: CGFloat(offset)*intervalWidth(index: intervals.count)+hourWidth,
+                    y: dateToPixels(interval.start))
         }
     }
 
@@ -116,16 +180,39 @@ extension DayTimetableView {
         let contentSize = contentSize.height
         let ratio = duration/(60 * 60 * 24)
         let durationInPixels = ratio*contentSize
-        let startToPixels = startToPixels(interval)
+        let startToPixels = dateToPixels(interval.start)
         let durationCap = contentSize - startToPixels
-        return min(durationCap, durationInPixels)
+        return max(min(durationCap, durationInPixels), 20)
     }
 
-    private func startToPixels(_ interval: Interval) -> CGFloat {
-        let start = interval.start.timeIntervalSince(interval.start.app.startOfDay)
+    private func dateToPixels(_ date: Date) -> CGFloat {
+        let start = date.timeIntervalSince(
+            date.app.startOfDay)
         let ratio = start/(60 * 60 * 24)
         let startInPixels = ratio*contentSize.height
         return startInPixels
+    }
+
+    private func scrollToInitialPositionIfNeeded() {
+        guard !didScrollInitially,
+              size.height > 0,
+              contentSize.height > size.height else { return }
+
+        let firstInterval = intervals
+            .flatMap { $0 }
+            .min(by: { $0.start < $1.start })
+        let hour = if date.app.dayIsEqualTo(Date()) {
+            Date().app.timeComponents.hour ?? 8
+        } else {
+            firstInterval?.start.app.timeComponents.hour ?? 8
+        }
+
+        let initialScrollID = hours.indices.contains(hour) ? hours[hour] : nil
+
+        didScrollInitially = true
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            scrolledID = initialScrollID
+        }
     }
 
     static func combineIntervals(_ intervals: [Interval]) -> [[Interval]] {
@@ -153,14 +240,24 @@ extension DayTimetableView {
 }
 
 #Preview {
-    DayTimetableView(intervals: [
-        .init(id: UUID().uuidString, start: Date().app.startOfDay, end: Date().app.startOfDay.app.addingHours(2)),
-        .init(id: UUID().uuidString, start: Date().app.startOfDay.app.addingHours(1), end: Date().app.startOfDay.app.addingHours(3)),
-        .init(id: UUID().uuidString, start: Date().app.startOfDay.app.addingHours(4), end: Date().app.startOfDay.app.addingHours(5))
-    ]) { interval in
-        VStack {
+    DayTimetableView(
+        date: Date(),
+        intervals: [
+            .init(id: UUID().uuidString, start: Date().app.startOfDay, end: Date().app.startOfDay.app.addingMinutes(5)),
+            .init(id: UUID().uuidString, start: Date().app.startOfDay.app.addingHours(1), end: Date().app.startOfDay.app.addingHours(3)),
+            .init(id: UUID().uuidString, start: Date().app.startOfDay.app.addingHours(4), end: Date().app.startOfDay.app.addingHours(5)),
+            .init(id: UUID().uuidString, start: Date().app.startOfDay.app.addingHours(23), end: Date().app.startOfDay.app.addingHours(25))
+        ], largeContent: { interval in
+            VStack {
+                Text(interval.id)
+                    .frame(height: 100)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }, midContent: { interval in
             Text(interval.id)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
+                .lineLimit(1)
+        }, smallContent: { interval in
+            Text(interval.id)
+                .lineLimit(1)
+        })
 }
